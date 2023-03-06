@@ -1,37 +1,14 @@
 "use client";
 import {api} from "~/utils/api";
+import Image from "next/image";
 
 
 export default function Podcasts() {
-  // const data = api.example.hello.useQuery({text: "hello"})
-  const data = api.example.hello.useQuery({text: "test"});
-  type VideoData = {
-    items: {
-      snippet: {
-        title: string,
-        description: string,
-        thumbnails: {
-          default: {
-            url: string;
-            width: number
-            height: number
-          }
-        },
-        resourceId: {
-          videoId: string
-        }
-      }
-    }[]
-  } | undefined
-  // const [videoData, setVideoData] = useState<VideoData>();
-
-  // useEffect(() => {
-  //   fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2C%20snippet&playlistId=UUxTaJgDzarpa7KPUAPoJUow&key=${process.env.YOUTUBE_API ?? ''}`).then((res) => res.json().then(data => setVideoData(data as VideoData))).catch(error => console.log(error))
-  // }, [])
+  const data = api.example.hello.useQuery();
 
   return (
-    <>
-      {/*<p>{data.data?.greeting}</p>*/}
+    <div>
+      <p>{data.data?.greeting?.items[0]?.snippet.title}</p>
       <div className={"uppercase"}>
         <h1>The Post Definitions Podcast</h1>
         <h2><a href="/podcasts/#podcasts">Click here to see all episodes</a></h2>
@@ -44,14 +21,19 @@ export default function Podcasts() {
         <p>photo</p>
         <p>It&apos;s time we step into a Post Definitions world</p>
       </div>
-      {/*{videoData?.items.map((video, idx) => {*/}
-      {/*  return (*/}
-      {/*    <div key={idx}>*/}
-      {/*      <p>{video.snippet.title}</p>*/}
-      {/*    </div>*/}
-      {/*  )*/}
-      {/*})}*/}
-
-    </>
+      {data.data?.greeting.items?.map((video, idx) => {
+        return (
+          <div key={idx}>
+            <p>{video.snippet.title}</p>
+            <p>{video.snippet.description}</p>
+            <p>{video.snippet.resourceId.videoId}</p>
+            <Image src={video.snippet.thumbnails.default.url}
+                   alt="thumbnail"
+                   height={video.snippet.thumbnails.default.height}
+                   width={video.snippet.thumbnails.default.width}/>
+          </div>
+        )
+      })}
+    </div>
   )
 }
