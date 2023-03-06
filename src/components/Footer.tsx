@@ -1,7 +1,8 @@
 export default function Footer() {
   return (
-    <>
-      <div>
+    <div className={"bg-blue text-neutral-200 z-20 relative col-span-2"}>
+      <div className={"sweater h-20"}></div>
+      <div className={"text-center p-10"}>
         <h2 className={"uppercase"}>Get in touch</h2>
         <ul>
           <li>fredericklancia@gmail.com</li>
@@ -13,6 +14,6 @@ export default function Footer() {
           <span>UX Design by Freddie Lancia</span>
         </h3>
       </div>
-    </>
+    </div>
   )
 }

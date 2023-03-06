@@ -1,6 +1,9 @@
 export default function About() {
+  const musicLinks = ["ReY4yVkoDc4", "RRRgK9TOes0", "g9NuX3NJ52o"];
+  const filmLinks = ["b87B7zyucgI", "uMZa5_xK2ek"];
+  const otherLinks = ["wVh6BQyd9DY"];
   return (
-    <>
+    <div>
       <h1>Who am I?</h1>
       <div className={"uppercase"}>
         <h3>Philosopher</h3>
@@ -30,7 +33,7 @@ export default function About() {
         {/*</p>*/}
         <p>
           My favorite podcast is Philosophize This! by Steven West.<br/>
-          My favorite philsopher is Søren Kierkegaard.<br/>
+          My favorite philosopher is Søren Kierkegaard.<br/>
           My favorite authors are Milan Kundera and Herman Hesse.<br/>
           Some of my favorite books are The Unbearable Lightness of Being by Milan Kundera, The Picture of Dorian Grey
           by Oskar Wilde, and At The Existentialist Cafe by Sarah Bakewell<br/>
@@ -40,20 +43,44 @@ export default function About() {
           For sport, these days I surf and practice yoga. At other times I rock climb and take any opportunities that
           come my way.
         </p>
-        <p>
-          Some random bits on youtube I like:
-          Music:
-          https://www.youtube.com/watch?v=ReY4yVkoDc4
-          https://www.youtube.com/watch?v=RRRgK9TOes0
-          https://www.youtube.com/watch?v=g9NuX3NJ52o
-          Short films:
-          https://www.youtube.com/watch?v=F2JQLmhg0sA&list=PLNIPVMrryqOBuQqnb9QxCpsScN-UUKNIK&index=6
-          https://www.youtube.com/watch?v=b87B7zyucgI
-          https://www.youtube.com/watch?v=uMZa5_xK2ek
-          Somewhere inbetween:
-          https://www.youtube.com/watch?v=wVh6BQyd9DY
-        </p>
+        <h2>Some Random bits on YouTube I like:</h2>
+        <h3>Music:</h3>
+        {musicLinks.map((link, idx) => {
+          return (
+            <div key={idx}>
+              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
+                      title="YouTube video player" frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen>
+              </iframe>
+            </div>
+          )
+        })}
+        <h3>Short Films</h3>
+        {filmLinks.map((link, idx) => {
+          return (
+            <div key={idx}>
+              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
+                      title="YouTube video player" frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen>
+              </iframe>
+            </div>
+          )
+        })}
+        <h3>Somewhere in between</h3>
+        {otherLinks.map((link, idx) => {
+          return (
+            <div key={idx}>
+              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
+                      title="YouTube video player" frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen>
+              </iframe>
+            </div>
+          )
+        })}
       </div>
-    </>
+    </div>
   )
 }
