@@ -1,17 +1,19 @@
+import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/20/solid";
+
 export default function About() {
   const musicLinks = ["ReY4yVkoDc4", "RRRgK9TOes0", "g9NuX3NJ52o"];
   const filmLinks = ["b87B7zyucgI", "uMZa5_xK2ek"];
   const otherLinks = ["wVh6BQyd9DY"];
   return (
-    <div>
-      <h1>Who am I?</h1>
-      <div className={"uppercase"}>
+    <div className={"lg:w-3/4 border mx-auto overflow-hidden"}>
+      <h1 className={"text-center m-10 text-6xl uppercase font-black"}>Who am I?</h1>
+      <div className={"uppercase bg-blue-800 flex justify-between m-10 hidden sm:flex"}>
         <h3>Philosopher</h3>
-        <h3>Life Nerd</h3>
+        <h3 className={"hidden sm:inline"}>Life Nerd</h3>
         <h3>World Traveler</h3>
-        <h3>Host of the Post Definitions Podcast</h3>
+        <h3 className={"hidden xl:inline"}>Host of the Post Definitions Podcast</h3>
       </div>
-      <div>
+      <div className={"bg-blue-700"}>
         <h2 className={"uppercase"}>I&apos;m Freddie</h2>
         <p>
           In 2021 I graduated with from my Bachelor’s Degree from the University of Washington with a double major in
@@ -44,43 +46,57 @@ export default function About() {
           come my way.
         </p>
         <h2>Some Random bits on YouTube I like:</h2>
-        <h3>Music:</h3>
-        {musicLinks.map((link, idx) => {
-          return (
-            <div key={idx}>
-              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
-                      title="YouTube video player" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen>
-              </iframe>
+        <div className={"my-6 bg-blue-800 py-10"}>
+          <h3 className={"text-4xl text-center uppercase mb-8"}>Music</h3>
+          <div className={"flex relative group"}>
+            <ChevronLeftIcon className={"opacity-0 group-hover:opacity-100 lg:opacity-100 w-1/4 hidden sm:inline top-1/2 -translate-y-1/2 lg:translate-y-0 left-0 cursor-pointer absolute lg:static fill-white/80"} onClick={() => {
+              const musicSlider = document.getElementById("music-slider");
+              musicSlider?.scrollBy(-musicSlider.scrollWidth / musicLinks.length, 0);
+            }}/>
+            <div id="music-slider" className={"flex aspect-video lg:aspect-auto lg:h-[33vw] whitespace-nowrap overflow-x-scroll snap-mandatory border-8 border-black snap-x scroll-smooth"}>
+              {musicLinks.map((link, idx) => {
+                return (
+                  <VideoContainer src={link} key={idx}/>
+                )
+              })}
             </div>
-          )
-        })}
+            <ChevronRightIcon className={"opacity-0 group-hover:opacity-100 lg:opacity-100 w-1/4 hidden sm:inline top-1/2 -translate-y-1/2 lg:translate-y-0 right-0 cursor-pointer absolute lg:static fill-white/80"} onClick={() => {
+              const musicSlider = document.getElementById("music-slider");
+              musicSlider?.scrollBy(musicSlider.scrollWidth / musicLinks.length, 0)
+            }}/>
+          </div>
+        </div>
         <h3>Short Films</h3>
-        {filmLinks.map((link, idx) => {
-          return (
-            <div key={idx}>
-              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
-                      title="YouTube video player" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen>
-              </iframe>
-            </div>
-          )
-        })}
+        {/*{filmLinks.map((link, idx) => {*/}
+        {/*  return (*/}
+        {/*    <div key={idx}>*/}
+        {/*      <VideoContainer src={link}/>*/}
+        {/*    </div>*/}
+        {/*  )*/}
+        {/*})}*/}
         <h3>Somewhere in between</h3>
-        {otherLinks.map((link, idx) => {
-          return (
-            <div key={idx}>
-              <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
-                      title="YouTube video player" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen>
-              </iframe>
-            </div>
-          )
-        })}
+        {/*{otherLinks.map((link, idx) => {*/}
+        {/*  return (*/}
+        {/*    <div key={idx}>*/}
+        {/*      <VideoContainer src={link}/>*/}
+        {/*    </div>*/}
+        {/*  )*/}
+        {/*})}*/}
       </div>
+    </div>
+  )
+}
+
+function VideoContainer({...props}) {
+  return (
+    <div className={"border-8 border-red-500 aspect-video snap-center mx-10"}>
+      {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
+      <iframe width="640" height="390" src={`https://www.youtube.com/embed/${props.src}`}
+              title="YouTube video player" frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={"w-full h-full"}>
+      </iframe>
     </div>
   )
 }

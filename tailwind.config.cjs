@@ -4,6 +4,9 @@ const config = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xs': '640px'
+      },
       colors: {
         'blue': {
           DEFAULT: '#255A77',
@@ -60,7 +63,9 @@ const config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };
 
 module.exports = config;
