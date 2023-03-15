@@ -11,7 +11,7 @@ type VideoData = {
       title: string,
       description: string,
       thumbnails: {
-        default: {
+        medium: {
           url: string;
           width: number
           height: number

@@ -18,11 +18,11 @@ export default function Navbar() {
     <div className={"lg:h-auto relative z-20"}>
       <div className={`fixed inset-0 backdrop-blur -z-10 ${show ? "" : "hidden"}`} onClick={() => setShow(false)}></div>
       <div className={"h-16 lg:hidden"}></div>
-      <nav className={"h-full max-lg:fixed flex text-neutral-200 w-20 max-lg:w-full max-lg:h-16 max-lg:top-0 m-0 z-10 bg-blue/80 justify-between max-lg:items-center"}>
-        <p className={"lg:hidden"}>Post Definitions</p>
+      <nav className={"h-full max-lg:fixed flex dark:text-neutral-200 w-20 max-lg:w-full max-lg:h-16 max-lg:top-0 m-0 z-10 bg-blue-200/80 dark:bg-blue/80 justify-between max-lg:items-center"}>
+        <h1 className={"lg:hidden text-xl mx-3 uppercase"}>Post Definitions</h1>
         <Bars3Icon onClick={() => setShow(!show)} className={"lg:sticky top-4 left-1/2 lg:-translate-x-3/4 h-8 cursor-pointer"}/>
         <p className={"[text-orientation:upright] [writing-mode:vertical-rl] max-lg:hidden sticky top-20 right-1/2 w-6 h-10"}>links</p>
-        <div className={`${show ? "": "hidden"} absolute left-20 h-full z-40 bg-blue/90`}>
+        <div className={`${show ? "": "hidden"} absolute left-20 h-full z-40 bg-blue-200/90 dark:bg-blue/90`}>
           <div className={"sticky top-0"}>
             <ul className={"flex"} onClick={() => setShow(false)}>
               <li><Link href="/">Home</Link></li>

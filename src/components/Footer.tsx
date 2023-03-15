@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <div className={"bg-blue text-neutral-200 z-20 relative col-span-2"}>
-      <div className={"sweater h-20"}></div>
+    <div className={"bg-blue-200/20 dark:bg-blue-800/20 border-t border-blue z-20 relative col-span-2"}>
+      {/*<div className={"sweater h-20 opacity-30"}></div>*/}
       <div className={"text-center p-10"}>
         <h2 className={"uppercase"}>Get in touch</h2>
         <ul>
