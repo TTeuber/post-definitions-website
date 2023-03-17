@@ -5,12 +5,12 @@
 body {
     font-family: "Roboto", sans-serif;
     background-image:
-            radial-gradient(at 20% 3%, rgba(141,192,219,0.7) 0px, transparent 50%),
-            radial-gradient(at 83% 86%, rgba(188,125,51,0.3) 0px, transparent 50%);
+            radial-gradient(at 20% 3%, rgba(141,192,219,0.8) 0px, transparent 50%),
+            radial-gradient(at 83% 86%, rgba(188,125,51,0.4) 0px, transparent 50%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    @apply bg-neutral-200 text-black dark:bg-blue-800 dark:text-neutral-200 dark:dark-bg
+    @apply bg-neutral-200 text-black dark:bg-gray-800 dark:text-neutral-200 dark:dark-bg
 }
 @layer utilities {
     .dark-bg {

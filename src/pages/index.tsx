@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         <h2 className={"uppercase text-xl p-6 sm:text-4xl font-bold z-10"}>The Podcast for humans and identity</h2>
       </div>
-      <div className={"bg-gold text-neutral-200 dark:text-blue-900 p-6 sm:h-[calc(100vh-4rem)] lg:h-screen min-h-fit flex flex-col justify-between"}>
+      <div className={"bg-gold/90 p-6 sm:h-[calc(100vh-4rem)] lg:h-screen min-h-fit flex flex-col justify-between"}>
         <h2 className={"uppercase text-4xl font-bold"}>Post Definitions</h2>
         <div className={"italic my-6 flex flex-col max-sm:gap-6 justify-between grow"}>
           <p>Has someone ever made a premature assumption about you?</p>
@@ -38,13 +38,15 @@ export default function Home() {
         <p>image</p>
         <h3 className={"uppercase text-center"}>It&apos;s time we step into a post definitions world</h3>
       </div>
-      <div className={"bg-yellow py-6 text-neutral-200 dark:text-blue-900 flex justify-between items-center flex-col max-sm:gap-6 sm:h-[calc(100vh-4rem)] lg:h-screen min-h-fit"}>
-        <h2 className={"uppercase font-bold text-5xl sm:text-6xl"}>Who am I?</h2>
-        <div className={"overflow-hidden relative w-full sm:w-auto sm:h-3/4 aspect-square shadow-md"}>
+      <div className={"bg-gold/90 py-6 flex justify-between items-center flex-col max-sm:gap-6 sm:h-[calc(100vh-4rem)] lg:h-screen min-h-fit"}>
+        <h2 className={"uppercase font-bold text-5xl sm:text-6xl my-6"}>Who am I?</h2>
+        <div className={"overflow-hidden relative w-full sm:w-auto sm:h-3/4 aspect-square shadow-md rounded-full"}>
           <Image src={"/fred.jpg"} alt={"fred"} width={500} height={500} className={"h-full w-full"}/>
         </div>
-        <p className={"mx-6"}>That&apos;s a big question. The best way to find out is by listening to
-          me speak on the podcast or by reaching out for a chat. <Link href="/about" className={"underline underline-offset-4"}>But for Now...<ArrowTopRightOnSquareIcon className={"h-6 inline px-1"}/></Link></p>
+        <div className={"m-6 bg-gold-400 dark:bg-gold border border-gold rounded-xl shadow max-sm:contents"}>
+          <p className={"m-6"}>That&apos;s a big question. The best way to find out is by listening to
+            me speak on the podcast or by reaching out for a chat. <Link href="/about" className={"underline underline-offset-4"}>But for Now...<ArrowTopRightOnSquareIcon className={"h-6 inline px-1"}/></Link></p>
+        </div>
       </div>
     </div>
   )
