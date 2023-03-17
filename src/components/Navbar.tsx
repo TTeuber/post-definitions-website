@@ -12,7 +12,7 @@ export default function Navbar() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <div className={"lg:h-auto relative z-50 row-span-2"}>
