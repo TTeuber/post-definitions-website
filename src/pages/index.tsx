@@ -41,7 +41,7 @@ export default function Home() {
       </div>
       <div className={"bg-white/20 dark:bg-black/20 py-6 flex justify-between items-center flex-col max-sm:gap-6 sm:h-[calc(100vh-4rem)] lg:h-screen min-h-fit"}>
         <h2 className={"uppercase font-bold text-5xl sm:text-6xl my-6"}>Who am I?</h2>
-        <div className={"overflow-hidden relative w-auto sm:h-[50vh] min-h-[300px] aspect-square shadow-md rounded-full mx-6"}>
+        <div className={"overflow-hidden relative w-auto sm:h-[50vh] min-h-[300px] aspect-square shadow-md rounded-xl border-2 border-blue mx-6"}>
           <Image src={"/fred.jpg"} alt={"fred"} width={500} height={500} className={"h-full w-full"}/>
         </div>
         <div className={"m-6 lg:w-3/4 bg-white/20 dark:bg-black/20 border border-blue rounded-xl shadow max-sm:contents max-sm:text-center"}>
