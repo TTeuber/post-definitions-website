@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import Socials from "~/components/Socials";
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon, MoonIcon, SunIcon, ComputerDesktopIcon } from "@heroicons/react/20/solid";
 
 export default function Navbar() {
@@ -35,34 +36,37 @@ function Test({show, setShow, darkMode, setDarkMode}: {
     setDarkMode: Dispatch<SetStateAction<string>>,
   }) {
   return (
-    <div className={`${show ? "": "-translate-x-[200%]"} fixed top-16 lg:top-0 max-lg:w-full lg:left-20 h-screen lg:h-full z-40 lg:border-r border-blue backdrop-blur-md transition`}>
-      <div className={"sticky top-0 flex text-2xl md:text-4xl lg:mx-16 flex-col justify-center items-center mt-[5vh] sm:mt-[10vh] gap-[5vh] sm:gap-[10vh]"}>
+    <div className={`${show ? "": "-translate-x-[200%]"} fixed top-16 lg:top-0 max-lg:w-full lg:left-20 h-screen lg:h-full z-40 lg:border-r border-blue backdrop-blur-md transition`} onClick={() => setShow(false)}>
+      <div className={"sticky top-0 flex text-xl lg:text-2xl lg:mx-16 flex-col justify-center items-center mt-[5vh] sm:mt-[10vh] gap-[5vh] lg:gap-[10vh]"}>
         <ul className={"contents"} onClick={() => setShow(false)}>
           <li className={"hover:text-neutral-600 hover:underline underline-offset-2 dark:hover:text-neutral-400 uppercase font-bold"}><Link href="/">Home</Link></li>
           <li className={"hover:text-neutral-600 hover:underline underline-offset-2 dark:hover:text-neutral-400 uppercase font-bold"}><Link href="/about">About</Link></li>
           <li className={"hover:text-neutral-600 hover:underline underline-offset-2 dark:hover:text-neutral-400 uppercase font-bold"}><Link href="/podcasts">Podcasts</Link></li>
         </ul>
-        <p>Link</p>
+        <Socials/>
         <div>
-          <p className={"text-center text-2xl mb-6"}>Dark Mode</p>
+          {/*<p className={"text-center text-2xl mb-6"}>Dark Mode</p>*/}
           <div className={"flex gap-6 text-xl"}>
             <SunIcon
-              className={`${darkMode === "light" ? "border-2 md:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 md:w-8 p-2 cursor-pointer`}
-              onClick={() => {
+              className={`${darkMode === "light" ? "border-2 lg:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 lg:w-8 p-2 cursor-pointer`}
+              onClick={(e) => {
                 localStorage.theme = 'light';
                 setDarkMode("light");
+                e.stopPropagation();
               }}>Light</SunIcon>
             <MoonIcon
-              className={`${darkMode === "dark" ? "border-2 md:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 md:w-8 p-2 cursor-pointer`}
-              onClick={() => {
+              className={`${darkMode === "dark" ? "border-2 lg:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 lg:w-8 p-2 cursor-pointer`}
+              onClick={(e) => {
                 localStorage.theme = 'dark';
                 setDarkMode("dark");
+                e.stopPropagation();
               }}>Dark</MoonIcon>
             <ComputerDesktopIcon
-              className={`${darkMode === "system" ? "border-2 md:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 md:w-8 p-2 cursor-pointer`}
-              onClick={() => {
+              className={`${darkMode === "system" ? "border-2 lg:border-4 rounded-xl border-black dark:border-white" : ""} box-content dark:fill-white hover:fill-neutral-600 dark:hover:fill-neutral-400 w-6 lg:w-8 p-2 cursor-pointer`}
+              onClick={(e) => {
                 localStorage.removeItem('theme');
-                setDarkMode("system")
+                setDarkMode("system");
+                e.stopPropagation();
               }}>System</ComputerDesktopIcon>
           </div>
         </div>

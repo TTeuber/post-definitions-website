@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useState } from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/20/solid";
+import Socials from "~/components/Socials";
 
 
 export default function Podcasts() {
@@ -32,15 +33,15 @@ export default function Podcasts() {
   return (
     <div className={"overflow-hidden lg:w-3/4 mx-auto"}>
       <div className={"uppercase"}>
-        <h1 className={"text-[min(8vw,3.5rem)] text-center font-black my-10"}>The Post Definitions Podcast</h1>
+        <h1 className={"text-[min(8vw,3rem)] text-center font-black my-10"}>The Post Definitions Podcast</h1>
         {/*<h2><Link href="/podcasts">Click here to see all episodes</Link></h2>*/}
         <div className={"bg-blue-200/20 dark:bg-blue-600/20 flex flex-col justify-between text-center max-lg:px-[10%] gap-10 p-8 text-2xl shadow-xl border border-blue max-sm:border-x-0 sm:mx-6 lg:mx-auto sm:rounded-xl"}>
           <p>I travel the world and talk to new and old friends.</p>
           <p>We explore how the conceptual boxes we put ourselves and others into affect our lives.</p>
         </div>
         <h2 className={"text-center text-[min(6vw,2.75rem)] sm:text-3xl my-6 font-bold"}>Subscribe to the podcast</h2>
-        <div>
-          <p>links</p>
+        <div className={"flex justify-center my-10"}>
+          <Socials/>
         </div>
         {/*<p>photo</p>*/}
         <p className={"text-center text-lg sm:text-xl py-6"}>It&apos;s time we step into a Post Definitions world</p>
