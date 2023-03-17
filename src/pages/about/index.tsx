@@ -65,7 +65,7 @@ function VideoContainer({...props}: {
     src: string
   }) {
   return (
-    <div className={"aspect-video snap-center mx-10"}>
+    <div className={"aspect-video snap-center mx-10 h-full"}>
       <iframe width="640" height="390" src={`https://www.youtube.com/embed/${props.src}`}
               title="YouTube video player" frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -98,13 +98,20 @@ function Test({...props}: {
     <div className={"mt-6 bg-blue-300/30 dark:bg-blue-900/40 py-10"}>
       <h3 className={"text-4xl text-center uppercase mb-8 font-bold"}>{props.title}</h3>
       <div className={"flex relative group"}>
-        <ChevronLeftIcon className={"lg:w-20 xl:w-36 opacity-0 group-hover:opacity-100 lg:opacity-100 w-1/4 hidden sm:inline top-1/2 -translate-y-1/2 lg:translate-y-0 left-0 cursor-pointer absolute lg:static dark:fill-white/80 max-lg:fill-white/80"} onClick={() => {
+        <ChevronLeftIcon className={"w-1/4 lg:w-20 xl:w-36 opacity-0 group-hover:opacity-100 lg:opacity-100 hidden sm:inline top-1/2 -translate-y-1/2 lg:translate-y-0 left-0 cursor-pointer absolute lg:static dark:fill-white/80 max-lg:fill-white/80"} onClick={() => {
           slider.current?.scrollBy(-slider.current.scrollWidth / props.links.length, 0);
         }}/>
         <div ref={slider} className={"w-full flex aspect-video whitespace-nowrap overflow-x-scroll snap-mandatory snap-x scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"}>
           {props.links.map((link, idx) => {
             return (
-              <VideoContainer src={link} key={idx}/>
+              <div key={idx} className={"aspect-video snap-center mx-10 h-full"}>
+                <iframe width="640" height="390" src={`https://www.youtube.com/embed/${link}`}
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className={"w-full h-full"}>
+                </iframe>
+              </div>
             )
           })}
         </div>

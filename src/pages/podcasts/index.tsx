@@ -53,10 +53,10 @@ export default function Podcasts() {
               <div className={"grid grid-cols-[18rem_auto] grid-rows-[6rem_auto] max-md:grid-rows-[12rem_auto] max-sm:flex flex-col p-5 bg-blue-200/20 hover:bg-blue-400/30 dark:bg-blue-800/20 dark:hover:bg-blue-600/20 border border-blue shadow-lg sm:shadow-xl sm:rounded-xl"}>
                 <a href={"https://youtu.be/"  + video.snippet.resourceId.videoId} target="_blank" rel="noreferrer" className={`contents`}>
                   <div className={"bg-black h-full w-full max-sm:w-full md:row-span-2 flex items-center shadow-lg"}>
-                    <Image src={video.snippet.thumbnails.medium.url}
+                    <Image src={video.snippet.thumbnails.high.url}
                            alt="thumbnail"
-                           height={video.snippet.thumbnails.medium.height}
-                           width={video.snippet.thumbnails.medium.width}
+                           height={video.snippet.thumbnails.high.height}
+                           width={video.snippet.thumbnails.high.width}
                            className={"object-contain"}/>
                   </div>
                   <p className={"text-2xl sm:line-clamp-3 ml-4 max-md:mx-0 max-sm:text-xl max-md:mt-4 max-md:row-start-2"}>{video.snippet.title}</p>

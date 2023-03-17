@@ -6,9 +6,9 @@ import {ArrowTopRightOnSquareIcon} from "@heroicons/react/20/solid";
 export default function Home() {
   return (
     <div className={"text-2xl overflow-hidden"}>
-      <div className={"py-10 max-lg:py-5 text-center h-[calc(100vh-4rem)] lg:h-screen min-h-[400px] max-sm:min-h-[550px] flex flex-col relative justify-between gap-3"}>
+      <div className={"py-10 max-lg:py-5 text-center h-[calc(100vh-4rem)] lg:h-screen min-h-[500px] max-sm:min-h-[550px] flex flex-col relative justify-between gap-3"}>
         <h1 className={"uppercase text-4xl max-sm:text-2xl md:[font-size:clamp(1.5rem,5vw,3.75rem)] [line-height:1] font-black mx-1"}>The Post Definitions Podcast</h1>
-        <div className={"h-3/4 object-center"}>
+        <div className={"h-[50vh] object-center"}>
           <Image priority src={"/podcast_cover.jpg"} alt={"podcast cover"} height={400} width={400} className={"mx-auto shadow-md dark:shadow-xl shadow-gray-500 dark:shadow-gray-900 rounded-md h-full w-auto"}/>
         </div>
         <h2 className={"uppercase text-xl p-6 sm:text-4xl font-bold z-10"}>The Podcast for humans and identity</h2>
