@@ -1,7 +1,6 @@
 import { z } from "zod";
 import fetch from 'node-fetch';
-import {env} from '../../../env.mjs';
-import fredData from "../../../../public/fred-data.json";
+import {env} from "~/env.mjs";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
@@ -11,7 +10,7 @@ type VideoData = {
       title: string,
       description: string,
       thumbnails: {
-        medium: {
+        high: {
           url: string;
           width: number
           height: number
@@ -24,7 +23,6 @@ type VideoData = {
   }[]
 } | undefined
 
-// const YoutubeData: VideoData = fredData;
 
 // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 const request = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails%2C%20snippet&maxResults=50&playlistId=UUxTaJgDzarpa7KPUAPoJUow&key=${env.YOUTUBE_API_KEY}`)
