@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 body {
+    --gradient: linear-gradient(to bottom, rgba(141,192,219,0.8), rgba(188,125,51,0.5));
+    --dark-gradient: linear-gradient(to bottom, rgba(37,90,119,0.95), rgba(188,125,51,0.95));
     font-family: "Roboto", sans-serif;
     /*background-image:*/
     /*        radial-gradient(at 20% 3%, rgba(141,192,219,0.8) 0px, transparent 50%),*/

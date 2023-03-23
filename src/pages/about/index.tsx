@@ -16,7 +16,7 @@ export default function About() {
         <h3>World Traveler</h3>
         <h3 className={"inline sm:hidden 2xl:inline text-center"}>Host of the Post Definitions Podcast</h3>
       </div>
-      <div className={"w-[50vh] max-sm:w-[75vw] overflow-hidden object-center aspect-square rounded-xl shadow-lg mx-auto my-10 border-2 border-blue"}>
+      <div className={"w-[50vh] max-sm:w-[75vw] overflow-hidden object-center aspect-square shadow-[7px_8px] shadow-blue/50 mx-auto my-10 border-2 border-blue"}>
         <Image src={"/fred2.jpg"} alt={'fred'} height={400} width={400} className={"w-full"}/>
       </div>
       <div className={"bg-blue-300/10 dark:bg-blue-700/10 sm:max-lg:m-10 mx-auto shadow-xl sm:mb-10 border sm:rounded-xl border-blue overflow-hidden"}>
