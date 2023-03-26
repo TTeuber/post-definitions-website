@@ -14,7 +14,7 @@ export default function Home() {
       >
         <h1
           className={
-            "max-[360px]:text-2xl mx-4 text-3xl font-black uppercase [line-height:1] sm:[font-size:clamp(2rem,5vw,3rem)] lg:text-5xl"
+            "mx-4 text-3xl font-black uppercase [line-height:1] max-[360px]:text-2xl sm:[font-size:clamp(2rem,5vw,3rem)] lg:text-5xl"
           }
         >
           The Post Definitions Podcast
@@ -22,7 +22,7 @@ export default function Home() {
         <div className={"h-[50vh] object-center "}>
           <Image
             priority
-            src={"/podcast_cover.jpg"}
+            src={"/photos/podcast_cover.jpg"}
             alt={"podcast cover"}
             height={400}
             width={400}
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
         <h2
           className={
-            "max-[360px]:text-xl z-10 p-6 text-2xl font-bold uppercase sm:[font-size:clamp(1.5rem,3.5vw,2.5rem)]"
+            "z-10 p-6 text-2xl font-bold uppercase max-[360px]:text-xl sm:[font-size:clamp(1.5rem,3.5vw,2.5rem)]"
           }
         >
           The Podcast for humans and identity
@@ -124,7 +124,7 @@ export default function Home() {
           }
         >
           <Image
-            src={"/fred.jpg"}
+            src={"/photos/fred.jpg"}
             alt={"fred"}
             width={500}
             height={500}
