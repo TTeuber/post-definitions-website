@@ -22,7 +22,7 @@ export default function Home() {
         <div className={"h-[50vh] object-center "}>
           <Image
             priority
-            src={"/photos/PodcastCover.jpg"}
+            src={"/photos/NewPCCover.jpg"}
             alt={"podcast cover"}
             height={400}
             width={400}
