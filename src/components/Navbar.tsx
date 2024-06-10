@@ -133,7 +133,7 @@ function Test({
               "font-bold uppercase underline-offset-2 hover:text-neutral-600 hover:underline dark:hover:text-neutral-400"
             }
           >
-            <Link href="/about">About</Link>
+            <a href=“https://freddielancia.com” target=“_blank” rel=“ noopener noreferrer”>
           </li>
           <li
             className={
